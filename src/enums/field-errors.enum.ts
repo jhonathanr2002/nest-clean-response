@@ -1,4 +1,4 @@
-export enum FieldRuleResponse {
+export enum FieldErrorsEnum {
     IS_NOT_STRING = 'isNotString',
     MIN_LENGTH = 'minLength',
     MAX_LENGTH = 'maxLength',

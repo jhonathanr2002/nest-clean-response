@@ -1,6 +1,6 @@
 import { HttpStatus, HttpException } from '@nestjs/common';
-import { MessageArgsType } from '../../../nest-crud-utils/src/types/message-args.type';
-import { FieldErrorsEnum } from '../../../nest-crud-utils/src/enums/field-errors.enum';
+import { MessageArgsType } from '../types/message-args.type';
+import { FieldErrorsEnum } from '../enums/field-errors.enum';
 
 export class UserException extends HttpException {
     private readonly _property: string;

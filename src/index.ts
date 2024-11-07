@@ -11,7 +11,7 @@ export * from './decorators/api-ok-object-response.decorator';
 export * from './dto/response-error.dto';
 export * from './dto/response.dto';
 
-export * from './enums/field-rule-response.enum';
+export * from './enums/field-errors.enum';
 export * from './enums/response.enum';
 
 export * from './exceptions/user.exception';
