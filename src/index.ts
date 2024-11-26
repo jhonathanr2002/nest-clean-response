@@ -16,6 +16,9 @@ export * from './enums/response.enum';
 
 export * from './exceptions/user.exception';
 
+export * from './interceptors/duration.interceptor';
+export * from './interceptors/lazy-loading.interceptor';
+
 export * from './interfaces/duration.interface';
 
 export * from './types/message-args.type';
