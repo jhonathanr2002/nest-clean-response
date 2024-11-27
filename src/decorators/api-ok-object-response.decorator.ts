@@ -4,7 +4,7 @@ import { ResponseDto } from '../dto/response.dto';
 
 export const ApiOkObjectResponse = <TModel extends Type<any>>(
     model: TModel,
-    sPrimaryType?: "boolean" | "array"
+    sPrimaryType?: 'boolean' | 'array',
 ) => {
     return applyDecorators(
         ApiExtraModels(ResponseDto),
@@ -18,39 +18,39 @@ export const ApiOkObjectResponse = <TModel extends Type<any>>(
                         properties: {
                             result: getResultDefinition(model, sPrimaryType),
                             duration: {
-                                type: "object",
+                                type: 'object',
                                 properties: {
                                     ms: {
-                                        type: "string",
-                                        description: "Duración en segundos de la petición"
+                                        type: 'string',
+                                        description: 'Duración en segundos de la petición',
                                     },
                                     seconds: {
-                                        type: "string",
-                                        description: "Duración en milisegundos de la petición"
-                                    }
-                                }
-                            }
+                                        type: 'string',
+                                        description: 'Duración en milisegundos de la petición',
+                                    },
+                                },
+                            },
                         },
                     },
                 ],
             },
         }),
-        ApiProduces("application/json")
+        ApiProduces('application/json'),
     );
 };
 
-function getResultDefinition<TModel extends Type<any>>(model: TModel, sPrimaryType: "boolean" | "array") {
-    if (sPrimaryType === "array") {
+function getResultDefinition<TModel extends Type<any>>(model: TModel, sPrimaryType: 'boolean' | 'array') {
+    if (sPrimaryType === 'array') {
         return {
             type: 'array',
             items: {
-                $ref: getSchemaPath(model)
+                $ref: getSchemaPath(model),
             },
-        }
+        };
     } else {
         return {
             type: (sPrimaryType ? sPrimaryType : undefined),
-            $ref: (sPrimaryType ? undefined : getSchemaPath(model))
-        }
+            $ref: (sPrimaryType ? undefined : getSchemaPath(model)),
+        };
     }
 }

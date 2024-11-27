@@ -27,18 +27,18 @@ export const ApiBadRequestObjectResponse = <TModel extends Type<any>>(
                                 },
                             },
                             duration: {
-                                type: "object",
+                                type: 'object',
                                 properties: {
                                     ms: {
-                                        type: "string",
-                                        description: "Duración en segundos de la petición"
+                                        type: 'string',
+                                        description: 'Duración en segundos de la petición',
                                     },
                                     seconds: {
-                                        type: "string",
-                                        description: "Duración en milisegundos de la petición"
-                                    }
-                                }
-                            }
+                                        type: 'string',
+                                        description: 'Duración en milisegundos de la petición',
+                                    },
+                                },
+                            },
                         },
                     },
                 ],

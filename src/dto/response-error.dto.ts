@@ -1,27 +1,27 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { MessageArgsType } from "../types/message-args.type";
-import { FieldErrorsEnum } from "../enums/field-errors.enum";
+import { ApiProperty } from '@nestjs/swagger';
+import { MessageArgsType } from '../types/message-args.type';
+import { FieldErrorsEnum } from '../enums/field-errors.enum';
 
 export class ResponseErrorDto {
     @ApiProperty({
-        type: String
+        type: String,
     })
     property: string;
 
     @ApiProperty({
-        type: String
+        type: String,
     })
     messageCode: FieldErrorsEnum | string;
 
     @ApiProperty({
-        type: Array<string | number | string[] | number[]>
+        type: Array<string | number | string[] | number[]>,
     })
     args: MessageArgsType;
 
     constructor(
         property: string,
         messageCode: FieldErrorsEnum | string,
-        args: MessageArgsType
+        args: MessageArgsType,
     ) {
         this.property = property;
         this.messageCode = messageCode;

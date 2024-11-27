@@ -1,17 +1,17 @@
-import { ApiProperty } from "@nestjs/swagger"
+import { ApiProperty } from '@nestjs/swagger';
 
 export class IDuration {
     @ApiProperty({
         nullable: false,
-        description: "Duración en segundos de la petición",
-        type: () => String
+        description: 'Duración en segundos de la petición',
+        type: () => String,
     })
     public ms: string;
 
     @ApiProperty({
         nullable: false,
-        description: "Duración en milisegundos de la petición",
-        type: () => String
+        description: 'Duración en milisegundos de la petición',
+        type: () => String,
     })
     public seconds: string;
 

@@ -26,5 +26,5 @@ export * from './types/message-args.type';
 export {
     getHttpStatusDescription,
     getHttpCodeByError,
-    isResponseDto
+    isResponseDto,
 };

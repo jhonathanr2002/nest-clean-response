@@ -38,7 +38,7 @@ export class Duration {
     public toObject() {
         return {
             ms: this.ms,
-            seconds: this.seconds
-        } as IDuration
+            seconds: this.seconds,
+        } as IDuration;
     }
 }
