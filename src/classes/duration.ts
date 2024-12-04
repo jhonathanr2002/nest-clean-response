@@ -1,5 +1,5 @@
 import * as moment from 'moment-timezone';
-import { IDuration } from '../interfaces/duration.interface';
+import { DurationDto } from '../dto/duration.dto';
 
 export class Duration {
     private readonly _startTime: number | null;
@@ -36,9 +36,6 @@ export class Duration {
     }
 
     public toObject() {
-        return {
-            ms: this.ms,
-            seconds: this.seconds,
-        } as IDuration;
+        return new DurationDto(this.seconds, this.ms);
     }
 }

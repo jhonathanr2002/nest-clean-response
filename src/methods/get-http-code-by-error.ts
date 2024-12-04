@@ -8,28 +8,28 @@ import { ThrottlerException } from '@nestjs/throttler';
 
 export default function getHttpCodeByError(oError: Error): HttpStatus {
     if (isResponseDto(oError)) {
-		return (oError as unknown as ResponseDto<unknown>).code;
-	} else if (oError instanceof NotFoundException) {
-		return HttpStatus.NOT_FOUND;
-	} else if (oError instanceof ThrottlerException) {
-		return HttpStatus.TOO_MANY_REQUESTS;
-	} else if (oError instanceof UnauthorizedException || oError.message === 'jwt expired') {
-		return HttpStatus.UNAUTHORIZED;
-	} else if (oError instanceof BackendErrorException) {
-		return oError.getStatus();
-	} else if (oError instanceof BadRequestException || (oError instanceof UserException) || oError instanceof ResponseErrorDto) {
-		return HttpStatus.BAD_REQUEST;
-	} else if (oError instanceof ForbiddenException) {
-		return HttpStatus.FORBIDDEN;
-	} else if (oError && oError.message === 'Timeout has occurred') {
-		return HttpStatus.GATEWAY_TIMEOUT;
-	}
+        return (oError as unknown as ResponseDto<unknown>).code;
+    } else if (oError instanceof NotFoundException) {
+        return HttpStatus.NOT_FOUND;
+    } else if (oError instanceof ThrottlerException) {
+        return HttpStatus.TOO_MANY_REQUESTS;
+    } else if (oError instanceof UnauthorizedException || oError.message === 'jwt expired') {
+        return HttpStatus.UNAUTHORIZED;
+    } else if (oError instanceof BackendErrorException) {
+        return oError.getStatus();
+    } else if (oError instanceof BadRequestException || (oError instanceof UserException) || oError instanceof ResponseErrorDto) {
+        return HttpStatus.BAD_REQUEST;
+    } else if (oError instanceof ForbiddenException) {
+        return HttpStatus.FORBIDDEN;
+    } else if (oError && oError.message === 'Timeout has occurred') {
+        return HttpStatus.GATEWAY_TIMEOUT;
+    }
 
-	if (typeof oError === 'string' && (oError as string).includes('There is no matching message handler defined in the remote service.')) {
-		return HttpStatus.SERVICE_UNAVAILABLE;
-	} else {
-		console.error('ControllerError.getHttpCodeByError(oError)', oError);
+    if (typeof oError === 'string' && (oError as string).includes('There is no matching message handler defined in the remote service.')) {
+        return HttpStatus.SERVICE_UNAVAILABLE;
+    } else {
+        console.error('getHttpCodeByError(oError)', oError.name, oError.message, oError);
 
-		return HttpStatus.INTERNAL_SERVER_ERROR;
-	}
+        return HttpStatus.INTERNAL_SERVER_ERROR;
+    }
 }

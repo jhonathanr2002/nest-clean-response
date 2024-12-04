@@ -13,6 +13,7 @@ export enum ResponseEnum {
     /** GENERAL Responses **/
     READ_OK = 'READ_OK',
     SAVE_OK = 'SAVE_OK',
+    UPSERT_OK = 'UPSERT_OK',
     UPDATE_OK = 'UPDATE_OK',
     DELETE_OK = 'DELETE_OK',
 }

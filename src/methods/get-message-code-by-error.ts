@@ -29,7 +29,7 @@ export default function getMessageCodeByError(oError: Error): ResponseEnum {
     if (typeof oError === 'string' && (oError as string).includes('There is no matching message handler defined in the remote service.')) {
         return ResponseEnum.SERVICE_UNAVAILABLE;
     } else {
-        console.error('ControllerError.getHttpCodeByError(oError)', oError);
+        console.error('getMessageCodeByError(oError)', oError.name, oError.message, oError);
 
         return ResponseEnum.INTERNAL_SERVER_ERROR;
     }

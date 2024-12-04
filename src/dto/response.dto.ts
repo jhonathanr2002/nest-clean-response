@@ -1,8 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ResponseErrorDto } from './response-error.dto';
-import { IDuration } from '../interfaces/duration.interface';
-import { Duration } from '../classes/duration';
 import { ResponseEnum } from '../enums/response.enum';
+import { DurationDto } from './duration.dto';
 
 export class ResponseDto<T> {
     @ApiProperty({
@@ -22,9 +21,9 @@ export class ResponseDto<T> {
     @ApiProperty({
         nullable: false,
         description: 'Duración de la operación',
-        type: () => Duration,
+        type: () => DurationDto,
     })
-    duration?: Duration | IDuration;
+    duration?: DurationDto;
 
     result: T;
 
@@ -34,7 +33,7 @@ export class ResponseDto<T> {
         code: number,
         messageCode: ResponseEnum | string,
         result: T,
-        duration?: Duration | IDuration,
+        duration?: DurationDto,
         resultError?: Array<ResponseErrorDto>,
     ) {
         this.code = code;
