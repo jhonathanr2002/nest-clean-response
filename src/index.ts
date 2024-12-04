@@ -1,5 +1,6 @@
 import getHttpStatusDescription from './methods/http-status-descripcion';
 import getHttpCodeByError from './methods/get-http-code-by-error';
+import getMessageCodeByError from './methods/get-message-code-by-error';
 import isResponseDto from './methods/is-response-dto';
 
 export * from './classes/backend-error.exception';
@@ -27,4 +28,5 @@ export {
     getHttpStatusDescription,
     getHttpCodeByError,
     isResponseDto,
+    getMessageCodeByError
 };
