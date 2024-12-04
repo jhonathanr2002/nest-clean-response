@@ -1,10 +1,10 @@
-import { NotFoundException, UnauthorizedException, BadRequestException, ForbiddenException } from '@nestjs/common';
-import { ThrottlerException } from '@nestjs/throttler';
-import { BackendErrorException } from '../classes/backend-error.exception';
-import { ResponseErrorDto } from '../dto/response-error.dto';
-import { ResponseDto } from '../dto/response.dto';
-import { ResponseEnum } from '../enums/response.enum';
-import { UserException } from '../exceptions/user.exception';
+import {NotFoundException, UnauthorizedException, BadRequestException, ForbiddenException} from '@nestjs/common';
+import {ThrottlerException} from '@nestjs/throttler';
+import {BackendErrorException} from '../classes/backend-error.exception';
+import {ResponseErrorDto} from '../dto/response-error.dto';
+import {ResponseDto} from '../dto/response.dto';
+import {ResponseEnum} from '../enums/response.enum';
+import {UserException} from '../exceptions/user.exception';
 import isResponseDto from './is-response-dto';
 
 export default function getMessageCodeByError(oError: Error): ResponseEnum {

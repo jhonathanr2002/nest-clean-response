@@ -1,7 +1,7 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { ResponseErrorDto } from './response-error.dto';
-import { ResponseEnum } from '../enums/response.enum';
-import { DurationDto } from './duration.dto';
+import {ApiProperty} from '@nestjs/swagger';
+import {ResponseErrorDto} from './response-error.dto';
+import {ResponseEnum} from '../enums/response.enum';
+import {DurationDto} from './duration.dto';
 
 export class ResponseDto<T> {
     @ApiProperty({

@@ -1,5 +1,5 @@
 import * as moment from 'moment-timezone';
-import { DurationDto } from '../dto/duration.dto';
+import {DurationDto} from '../dto/duration.dto';
 
 export class Duration {
     private readonly _startTime: number | null;

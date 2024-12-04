@@ -1,6 +1,6 @@
-import { applyDecorators, Type } from '@nestjs/common';
-import { ApiExtraModels, ApiOkResponse, ApiProduces, getSchemaPath } from '@nestjs/swagger';
-import { ResponseDto } from '../dto/response.dto';
+import {applyDecorators, Type} from '@nestjs/common';
+import {ApiExtraModels, ApiOkResponse, ApiProduces, getSchemaPath} from '@nestjs/swagger';
+import {ResponseDto} from '../dto/response.dto';
 
 export const ApiOkObjectResponse = <TModel extends Type<any>>(
     model: TModel,
@@ -13,7 +13,7 @@ export const ApiOkObjectResponse = <TModel extends Type<any>>(
             schema: {
                 title: `ResponseDtoOf${model.name}`,
                 allOf: [
-                    { $ref: getSchemaPath(ResponseDto) },
+                    {$ref: getSchemaPath(ResponseDto)},
                     {
                         properties: {
                             result: getResultDefinition(model, sPrimaryType),

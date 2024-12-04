@@ -1,15 +1,15 @@
-import { Injectable, Scope, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
+import {Injectable, Scope, NestInterceptor, ExecutionContext, CallHandler} from '@nestjs/common';
 import moment from 'moment';
-import { Mixin } from 'ts-mixer';
-import { BackendErrorException } from '../classes/backend-error.exception';
-import { Duration } from '../classes/duration';
-import { catchError, map, Observable } from 'rxjs';
+import {Mixin} from 'ts-mixer';
+import {BackendErrorException} from '../classes/backend-error.exception';
+import {Duration} from '../classes/duration';
+import {catchError, map, Observable} from 'rxjs';
 import isResponseDto from '../methods/is-response-dto';
 import getHttpCodeByError from '../methods/get-http-code-by-error';
-import { ResponseDto } from '../dto/response.dto';
-import { UserException } from '../exceptions/user.exception';
+import {ResponseDto} from '../dto/response.dto';
+import {UserException} from '../exceptions/user.exception';
 
-@Injectable({ scope: Scope.REQUEST })
+@Injectable({scope: Scope.REQUEST})
 export class DurationInterceptor extends Mixin(Duration) implements NestInterceptor {
     constructor() {
         super(null);

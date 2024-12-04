@@ -1,4 +1,4 @@
-import { HttpStatus } from '@nestjs/common';
+import {HttpStatus} from '@nestjs/common';
 
 const httpStatusDescriptions: { [key in HttpStatus]: string } = {
     [HttpStatus.CONTINUE]: 'Continue',

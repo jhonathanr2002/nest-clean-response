@@ -1,10 +1,10 @@
-import { HttpStatus, NotFoundException, UnauthorizedException, BadRequestException, ForbiddenException } from '@nestjs/common';
-import { ResponseDto } from '../dto/response.dto';
+import {HttpStatus, NotFoundException, UnauthorizedException, BadRequestException, ForbiddenException} from '@nestjs/common';
+import {ResponseDto} from '../dto/response.dto';
 import isResponseDto from './is-response-dto';
-import { ResponseErrorDto } from '../dto/response-error.dto';
-import { BackendErrorException } from '../classes/backend-error.exception';
-import { UserException } from '../exceptions/user.exception';
-import { ThrottlerException } from '@nestjs/throttler';
+import {ResponseErrorDto} from '../dto/response-error.dto';
+import {BackendErrorException} from '../classes/backend-error.exception';
+import {UserException} from '../exceptions/user.exception';
+import {ThrottlerException} from '@nestjs/throttler';
 
 export default function getHttpCodeByError(oError: Error): HttpStatus {
     if (isResponseDto(oError)) {

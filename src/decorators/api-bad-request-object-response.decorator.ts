@@ -1,11 +1,11 @@
-import { applyDecorators, Type } from '@nestjs/common';
+import {applyDecorators, Type} from '@nestjs/common';
 import {
     ApiBadRequestResponse,
     ApiExtraModels,
     getSchemaPath,
 } from '@nestjs/swagger';
-import { ResponseDto } from '../dto/response.dto';
-import { ResponseErrorDto } from '../dto/response-error.dto';
+import {ResponseDto} from '../dto/response.dto';
+import {ResponseErrorDto} from '../dto/response-error.dto';
 
 export const ApiBadRequestObjectResponse = <TModel extends Type<any>>(
     model: TModel,
@@ -17,7 +17,7 @@ export const ApiBadRequestObjectResponse = <TModel extends Type<any>>(
             schema: {
                 title: `ResponseDtoOf${model.name}`,
                 allOf: [
-                    { $ref: getSchemaPath(ResponseDto) },
+                    {$ref: getSchemaPath(ResponseDto)},
                     {
                         properties: {
                             resultError: {
