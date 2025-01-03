@@ -7,7 +7,7 @@ export * from './classes/backend-error.exception';
 export * from './classes/duration';
 
 export * from './decorators/api-response-options.interface';
-export * from './decorators/api-response.decorator';
+export * from './decorators/api-clean-response.decorator';
 
 export * from './dto/response-error.dto';
 export * from './dto/response.dto';
