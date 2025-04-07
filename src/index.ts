@@ -14,6 +14,7 @@ export * from './dto/response.dto';
 export * from './dto/duration.dto';
 
 export * from './enums/response.enum';
+export * from './enums/errors.enum';
 
 export * from './exceptions/user.exception';
 

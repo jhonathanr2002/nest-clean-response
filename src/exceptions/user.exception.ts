@@ -1,6 +1,6 @@
 import {HttpStatus, HttpException} from '@nestjs/common';
 import {MessageArgsType} from '../types/message-args.type';
-import {ErrorEnum} from 'nest-swagger-validator';
+import {ErrorEnum} from "../enums/errors.enum";
 
 export class UserException extends HttpException {
     private readonly _property: string;

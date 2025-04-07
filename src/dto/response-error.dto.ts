@@ -1,6 +1,6 @@
 import {ApiProperty} from '@nestjs/swagger';
 import {MessageArgsType} from '../types/message-args.type';
-import {ErrorEnum} from 'nest-swagger-validator';
+import {ErrorEnum} from "../enums/errors.enum";
 
 export class ResponseErrorDto {
     @ApiProperty({

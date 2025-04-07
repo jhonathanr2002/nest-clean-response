@@ -1,6 +1,55 @@
 import {HttpStatus} from '@nestjs/common';
 
-const httpStatusDescriptions: { [key in HttpStatus]: string } = {
+const httpStatusDescriptions: {
+    [HttpStatus.CONTINUE]: string;
+    [HttpStatus.SWITCHING_PROTOCOLS]: string;
+    [HttpStatus.PROCESSING]: string;
+    [HttpStatus.EARLYHINTS]: string;
+    [HttpStatus.OK]: string;
+    [HttpStatus.CREATED]: string;
+    [HttpStatus.ACCEPTED]: string;
+    [HttpStatus.NON_AUTHORITATIVE_INFORMATION]: string;
+    [HttpStatus.NO_CONTENT]: string;
+    [HttpStatus.RESET_CONTENT]: string;
+    [HttpStatus.PARTIAL_CONTENT]: string;
+    [HttpStatus.MOVED_PERMANENTLY]: string;
+    [HttpStatus.FOUND]: string;
+    [HttpStatus.SEE_OTHER]: string;
+    [HttpStatus.NOT_MODIFIED]: string;
+    [HttpStatus.TEMPORARY_REDIRECT]: string;
+    [HttpStatus.PERMANENT_REDIRECT]: string;
+    [HttpStatus.BAD_REQUEST]: string;
+    [HttpStatus.UNAUTHORIZED]: string;
+    [HttpStatus.PAYMENT_REQUIRED]: string;
+    [HttpStatus.FORBIDDEN]: string;
+    [HttpStatus.NOT_FOUND]: string;
+    [HttpStatus.METHOD_NOT_ALLOWED]: string;
+    [HttpStatus.NOT_ACCEPTABLE]: string;
+    [HttpStatus.PROXY_AUTHENTICATION_REQUIRED]: string;
+    [HttpStatus.REQUEST_TIMEOUT]: string;
+    [HttpStatus.CONFLICT]: string;
+    [HttpStatus.GONE]: string;
+    [HttpStatus.LENGTH_REQUIRED]: string;
+    [HttpStatus.PRECONDITION_FAILED]: string;
+    [HttpStatus.PAYLOAD_TOO_LARGE]: string;
+    [HttpStatus.URI_TOO_LONG]: string;
+    [HttpStatus.UNSUPPORTED_MEDIA_TYPE]: string;
+    [HttpStatus.REQUESTED_RANGE_NOT_SATISFIABLE]: string;
+    [HttpStatus.EXPECTATION_FAILED]: string;
+    [HttpStatus.I_AM_A_TEAPOT]: string;
+    [HttpStatus.MISDIRECTED]: string;
+    [HttpStatus.UNPROCESSABLE_ENTITY]: string;
+    [HttpStatus.FAILED_DEPENDENCY]: string;
+    [HttpStatus.PRECONDITION_REQUIRED]: string;
+    [HttpStatus.TOO_MANY_REQUESTS]: string;
+    [HttpStatus.INTERNAL_SERVER_ERROR]: string;
+    [HttpStatus.NOT_IMPLEMENTED]: string;
+    [HttpStatus.BAD_GATEWAY]: string;
+    [HttpStatus.SERVICE_UNAVAILABLE]: string;
+    [HttpStatus.GATEWAY_TIMEOUT]: string;
+    [HttpStatus.HTTP_VERSION_NOT_SUPPORTED]: string;
+    [HttpStatus.AMBIGUOUS]: string
+} = {
     [HttpStatus.CONTINUE]: 'Continue',
     [HttpStatus.SWITCHING_PROTOCOLS]: 'Switching Protocols',
     [HttpStatus.PROCESSING]: 'Processing',
