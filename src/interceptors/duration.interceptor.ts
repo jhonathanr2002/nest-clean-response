@@ -1,6 +1,5 @@
 import {Injectable, Scope, NestInterceptor, ExecutionContext, CallHandler} from '@nestjs/common';
 import moment from 'moment';
-import {Mixin} from 'ts-mixer';
 import {BackendErrorException} from '../classes/backend-error.exception';
 import {Duration} from '../classes/duration';
 import {catchError, map, Observable} from 'rxjs';
@@ -10,7 +9,7 @@ import {ResponseDto} from '../dto/response.dto';
 import {UserException} from '../exceptions/user.exception';
 
 @Injectable({scope: Scope.REQUEST})
-export class DurationInterceptor extends Mixin(Duration) implements NestInterceptor {
+export class DurationInterceptor extends Duration implements NestInterceptor {
     constructor() {
         super(null);
     }
