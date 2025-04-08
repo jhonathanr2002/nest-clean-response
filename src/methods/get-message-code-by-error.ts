@@ -14,7 +14,7 @@ export default function getMessageCodeByError(oError: Error): ResponseEnum {
         return ResponseEnum.NOT_FOUND;
     } else if (oError instanceof ThrottlerException) {
         return ResponseEnum.TOO_MANY_REQUESTS;
-    } else if (oError instanceof UnauthorizedException || oError.message === 'jwt expired') {
+    } else if (oError instanceof UnauthorizedException || oError.message === 'jwt expired' || oError.message.includes("Cannot read properties of null (reading 'getRepository')")) {
         return ResponseEnum.UNAUTHORIZED;
     } else if (oError instanceof BackendErrorException) {
         return ResponseEnum.INTERNAL_SERVER_ERROR;

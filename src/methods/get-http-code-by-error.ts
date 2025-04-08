@@ -13,7 +13,7 @@ export default function getHttpCodeByError(oError: Error): HttpStatus {
         return HttpStatus.NOT_FOUND;
     } else if (oError instanceof ThrottlerException) {
         return HttpStatus.TOO_MANY_REQUESTS;
-    } else if (oError instanceof UnauthorizedException || oError.message === 'jwt expired') {
+    } else if (oError instanceof UnauthorizedException || oError.message === 'jwt expired' || oError.message.includes("Cannot read properties of null (reading 'getRepository')")) {
         return HttpStatus.UNAUTHORIZED;
     } else if (oError instanceof BackendErrorException) {
         return oError.getStatus();
